@@ -9,7 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
@@ -26,7 +25,6 @@ jobs:
 
       - name: Correr tests
         run: python manage.py test accounts posts chat --verbosity 2
-
   deploy:
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'

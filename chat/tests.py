@@ -51,6 +51,6 @@ class AislamientoConversaciones(APITestCase):
         respuesta = self.client.post(url, {"content":"Mensaje de un intruso"})
         self.assertEqual(respuesta.status_code, status.HTTP_403_FORBIDDEN)
         self.assertEqual(
-            Message.objects.filter(content='Mensaje de un intruso').count(), 1
+            Message.objects.filter(content='Mensaje de un intruso').count(), 0
         )
 
